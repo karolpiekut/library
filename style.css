@@ -1,0 +1,49 @@
+body {
+  color: #7BBAF9;
+  font-family: Avenir, Helvetica, sans-serif;
+}
+
+#app {
+  width: 1280px;
+  height: 720px;
+  display: flex;
+  flex-direction: row;
+}
+
+#menuDiv {
+  height: 720px;
+  width: 15%;
+  background: #222435;
+}
+
+#bodyDiv {
+  height: 720px;
+  width: 85%;
+  background: #2F324A;
+}
+
+#menuDivLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#menuDivButtonsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+button {
+  width: 170px;
+  height: 40px;
+  font-size: large;
+  background: #2F324A;
+  color: #7BBAF9;
+  border: 1px;
+}
+
+button:hover {
+  background: #404464;
+}
