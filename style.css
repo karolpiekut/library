@@ -36,12 +36,12 @@ body {
 }
 
 button {
-  width: 170px;
+  width: 90%;
   height: 40px;
   font-size: large;
   background: #2F324A;
+  border: none;
   color: #7BBAF9;
-  border: 1px;
 }
 
 button:hover {
