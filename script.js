@@ -55,39 +55,140 @@ let readButtonSelector = document.querySelector('#readButton');
 let bodyTableSelector = document.querySelector('#bodyTable');
 
 //functions
-
 function generateAuthorsHeader() {
-  let authorHeader = document.createElement('tr');
+    let authorHeader = document.createElement('tr');
 
-  let authorIdHeader = document.createElement('th');
-  authorIdHeader.setAttribute('id', 'authorName');
-  authorIdHeader.innerText = 'id';
-  authorHeader.appendChild(authorIdHeader);
+    let authorId = document.createElement('th');
+    authorId.setAttribute('id', 'id');
+    authorId.innerText = 'id';
+    authorHeader.appendChild(authorId);
 
-  let authorNameHeader = document.createElement('th');
-  authorNameHeader.setAttribute('id', 'authorName');
-  authorNameHeader.innerText = 'Name';
-  authorHeader.appendChild(authorNameHeader);
+    let authorName = document.createElement('th');
+    authorName.setAttribute('id', 'authorName');
+    authorName.innerText = 'Name';
+    authorHeader.appendChild(authorName);
 
-  let authorSurnameHeader = document.createElement('th');
-  authorSurnameHeader.setAttribute('id', 'authorSurname');
-  authorSurnameHeader.innerText = 'Surname';
-  authorHeader.appendChild(authorSurnameHeader);
+    let authorSurname = document.createElement('th');
+    authorSurname.setAttribute('id', 'authorSurname');
+    authorSurname.innerText = 'Surname';
+    authorHeader.appendChild(authorSurname);
 
-  return authorHeader;
+    return authorHeader;
 }
 
 function generateQueueHeader() {
+    let queueHeader = document.createElement('tr');
 
+    let queue = document.createElement('th');
+    queue.setAttribute('id', 'queue');
+    queue.innerText = 'Queue';
+    queueHeader.appendChild(queue);
+
+    let title = document.createElement('th');
+    title.setAttribute('id', 'title');
+    title.innerText = 'Title';
+    queueHeader.appendChild(title);
+
+    let author = document.createElement('th');
+    author.setAttribute('id', 'author');
+    author.innerText = 'Author';
+    queueHeader.appendChild(author);
+
+    let type = document.createElement('th');
+    type.setAttribute('id', 'type');
+    type.innerText = 'Type';
+    queueHeader.appendChild(type);
+
+    return queueHeader;
 }
 
+function generateReadHeader() {
+    let readHeader = document.createElement('tr');
 
-function displayTableContent() {
-  bodyTableSelector.appendChild(generateAuthorsHeader());
+    let title = document.createElement('th');
+    title.setAttribute('id', 'title');
+    title.innerText = 'Title';
+    readHeader.appendChild(title);
+
+    let author = document.createElement('th');
+    author.setAttribute('id', 'author');
+    author.innerText = 'Author';
+    readHeader.appendChild(author);
+
+    let dateRead = document.createElement('th');
+    dateRead.setAttribute('id', 'dateRead');
+    dateRead.innerText = 'Date Read';
+    readHeader.appendChild(dateRead);
+
+    let score = document.createElement('th');
+    score.setAttribute('id', 'score');
+    score.innerText = 'Score';
+    readHeader.appendChild(score);
+
+    let type = document.createElement('th');
+    type.setAttribute('id', 'type');
+    type.innerText = 'Type';
+    readHeader.appendChild(type);
+
+    return readHeader;
 }
 
+function generateBooksHeader() {
+    //queue, title, author, book type, read status, date read, score, purchased
+    let booksHeader = document.createElement('tr');
 
-displayTableContent();
+    let queue = document.createElement('th');
+    queue.setAttribute('id', 'queue');
+    queue.innerText = 'Queue';
+    booksHeader.appendChild(queue);
+
+    let title = document.createElement('th');
+    title.setAttribute('id', 'title');
+    title.innerText = 'Title';
+    booksHeader.appendChild(title);
+
+    let author = document.createElement('th');
+    author.setAttribute('id', 'author');
+    author.innerText = 'Author';
+    booksHeader.appendChild(author);
+
+    let dateRead = document.createElement('th');
+    dateRead.setAttribute('id', 'dateRead');
+    dateRead.innerText = 'Date Read';
+    booksHeader.appendChild(dateRead);
+
+    let score = document.createElement('th');
+    score.setAttribute('id', 'score');
+    score.innerText = 'Score';
+    booksHeader.appendChild(score);
+
+    let type = document.createElement('th');
+    type.setAttribute('id', 'type');
+    type.innerText = 'Type';
+    booksHeader.appendChild(type);
+    
+    return booksHeader;
+}
+
+queueButtonSelector.addEventListener('click', () => {
+    bodyTableSelector.innerHTML = '';
+    bodyTableSelector.appendChild(generateQueueHeader());
+})
+
+booksButtonSelector.addEventListener('click', () => {
+    bodyTableSelector.innerHTML = '';
+    bodyTableSelector.appendChild(generateBooksHeader());
+})
+
+authorsButtonSelector.addEventListener('click', () => {
+    bodyTableSelector.innerHTML = '';
+    bodyTableSelector.appendChild(generateAuthorsHeader());
+})
+
+readButtonSelector.addEventListener('click', () => {
+    bodyTableSelector.innerHTML = '';
+    bodyTableSelector.appendChild(generateReadHeader());
+})
 
 
 
